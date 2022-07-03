@@ -46,7 +46,7 @@ Accept: application/json
 POST http://127.0.0.1:10001/movies/
 Accept: application/json
 Content-Type: application/json
-Authorization: 0x37517762526165743842466B594F35504F323533416E39764F56424D57774B78544F694C726631617962303D
+Authorization: 7QwbRaet8BFkYO5PO253An9vOVBMWwKxTOiLrf1ayb0=
 {
   "title": "Гарри Поттер мой кумир!",
   "trailer": "таким фильмам не нужны трейлеры",
@@ -125,3 +125,6 @@ Content-Type: application/json
   "username": "test2",
   "password": "test2"
 }
+###
+GET http://127.0.0.1:10001/users/
+Accept: application/json

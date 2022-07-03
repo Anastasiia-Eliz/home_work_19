@@ -19,7 +19,7 @@ class AuthService:
 
 		data = {
 			"username": user.username,
-			"password": user.password
+			"role": user.role
 		}
 		# access token on 30 min
 		min30 = datetime.datetime.utcnow() + datetime.timedelta(minutes=30)

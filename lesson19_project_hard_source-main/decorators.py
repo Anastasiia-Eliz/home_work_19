@@ -9,7 +9,8 @@ def auth_required(func):
 	def wrapper(*args, **kwargs):
 		if 'Authorization' not in request.headers:
 			abort(401)
-		token = request.headers['Authorization']
+		data = request.headers['Authorization']
+		token = data.split("Bearer")[-1]
 		try:
 			jwt.decode(token, SECRET, algorithms=[ALGO])
 		except Exception as e:
@@ -25,8 +26,8 @@ def admin_required(func):
 	def wrapper(*args, **kwargs):
 		if 'Authorization' not in request.headers:
 			abort(401)
-
-		token = request.headers["Authorization"]
+		data = request.headers['Authorization']
+		token = data.split("Bearer")[-1]
 		try:
 			data = jwt.decode(token, SECRET, algorithms=[ALGO])
 		except Exception as e:
