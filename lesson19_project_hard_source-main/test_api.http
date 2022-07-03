@@ -1,0 +1,127 @@
+GET http://127.0.0.1:10001/movies/
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:10001/movies/?director_id=12
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:10001/movies/?genre_id=4
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:10001/movies/?year=2010
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:10001/directors/
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:10001/directors/1
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:10001/genres/
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:10001/genres/1
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:10001/movies/21
+Accept: application/json
+
+###
+
+POST http://127.0.0.1:10001/movies/
+Accept: application/json
+Content-Type: application/json
+Authorization: 0x37517762526165743842466B594F35504F323533416E39764F56424D57774B78544F694C726631617962303D
+{
+  "title": "Гарри Поттер мой кумир!",
+  "trailer": "таким фильмам не нужны трейлеры",
+  "year": 1990,
+  "rating": 10,
+  "description": "10 из 10!"
+}
+
+###
+
+PUT http://127.0.0.1:10001/movies/21
+Accept: application/json
+Content-Type: application/json
+
+{
+  "id": 21,
+  "title": "-------",
+  "trailer": "-----",
+  "year": 0,
+  "rating": 0,
+  "description": "0 из 10!",
+  "genre_id": 1,
+  "director_id": 1
+}
+
+###
+
+PATCH http://127.0.0.1:10001/movies/3
+Accept: application/json
+Content-Type: application/json
+
+{
+  "id": 21,
+  "title": "-------",
+  "trailer": "-----",
+  "year": 0,
+  "rating": 0,
+  "description": "0 из 10!",
+  "genre_id": 1,
+  "director_id": 1
+}
+
+###
+
+DELETE http://127.0.0.1:10001/movies/21
+Accept: application/json
+Content-Type: application/json
+Authorization:
+{
+  "username": "test",
+  "password": "0x476D4D467761622F6E3338776C35444574784B436775374B3165564D52653472596A4932764E78306C486B3D",
+  "role": "user"
+}
+
+###
+POST http://127.0.0.1:10001/users/
+Accept: application/json
+Content-Type: application/json
+
+{
+  "username": "test1",
+  "password": "test1",
+  "role": "admin"
+}
+
+###
+DELETE http://127.0.0.1:10001/users/5
+###
+
+
+POST http://127.0.0.1:10001/auth
+Accept: application/json
+Content-Type: application/json
+
+{
+  "username": "test2",
+  "password": "test2"
+}
